@@ -1,6 +1,6 @@
 export default {
   async fetch(request, env, ctx) {
-    // 这里存放你的真实 API 域名，域名被封时，你只需在这里改一下保存即可
+    // 这里存放你的真实 API 域名，域名被封时，你只需在这里改一下保存即可1
     const config = {
       baseUrl: "https://api.doskrleti.com", 
       status: "active",
