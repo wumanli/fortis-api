@@ -1,0 +1,21 @@
+export default {
+  async fetch(request, env, ctx) {
+    // 这里存放你的真实 API 域名，域名被封时，你只需在这里改一下保存即可
+    const config = {
+      baseUrl: "https://api.doskrleti.com", 
+      status: "active",
+      timestamp: new Date().getTime()
+    };
+
+    return new Response(JSON.stringify(config), {
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8",
+        // 允许你的 Flutter APP 跨域访问（CORS）
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET",
+        // 告诉浏览器/APP 不要缓存这个结果，方便你随时秒切域名
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+      },
+    });
+  },
+};
